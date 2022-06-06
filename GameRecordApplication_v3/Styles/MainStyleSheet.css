@@ -17,3 +17,7 @@ img:hover {
 .container {
     padding: 2px 16px;
 }
+
+th {
+    text-align: center;
+}

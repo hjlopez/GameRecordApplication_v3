@@ -1,0 +1,69 @@
+﻿@model IEnumerable<GameRecordApplication_v3.Models.BilliardMatch>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BilliardGameMode.BilliardGameModeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BilliardGameType.BilliardGameTypeName)
+        </th>
+        <th>
+            Winner
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WinnerWins)
+        </th>
+        <th>
+            Loser
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoserWins)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Season)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.BilliardGameMode.BilliardGameModeName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BilliardGameType.BilliardGameTypeName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PlayerWin.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.WinnerWins)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PlayerLose.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LoserWins)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Season)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.BilliardMatchId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.BilliardMatchId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.BilliardMatchId })
+    </td>
+</tr>
+}
+
+</table>
