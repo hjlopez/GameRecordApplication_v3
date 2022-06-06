@@ -1,0 +1,74 @@
+﻿@model GameRecordApplication_v3.Models.BilliardMatch
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BilliardMatch</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BilliardGameMode.BilliardGameModeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BilliardGameMode.BilliardGameModeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BilliardGameType.BilliardGameTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BilliardGameType.BilliardGameTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerLose.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerLose.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerWin.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerWin.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WinnerWins)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WinnerWins)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoserWins)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoserWins)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Season)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Season)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BilliardMatchId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
