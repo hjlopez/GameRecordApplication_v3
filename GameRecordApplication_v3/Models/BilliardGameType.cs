@@ -13,7 +13,5 @@ namespace GameRecordApplication_v3.Models
         public string BilliardGameTypeName { get; set; }
         public bool IsActive { get; set; }
 
-        public ICollection<BilliardMatch> BilliardMatches { get; set; }
-
     }
 }

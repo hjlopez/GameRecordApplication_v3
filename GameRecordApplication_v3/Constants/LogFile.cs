@@ -7,6 +7,6 @@ namespace GameRecordApplication_v3.Constants
 {
     public static class LogFile
     {
-        public static string DBExceptionLog = AppDomain.CurrentDomain.BaseDirectory + "\\DBException_" + DateTime.Today.ToString("yyyyMMdd") + ".log";
+        public static string LogPath = "Logs";
     }
 }

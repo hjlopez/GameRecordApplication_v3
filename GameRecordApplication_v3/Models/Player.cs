@@ -15,7 +15,5 @@ namespace GameRecordApplication_v3.Models
         public string Name { get; set; }
         public string IconURL { get; set; }
 
-        public ICollection<BilliardMatch> WinningPlayer { get; set; }
-        public ICollection<BilliardMatch> LosingPlayer { get; set; }
     }
 }
