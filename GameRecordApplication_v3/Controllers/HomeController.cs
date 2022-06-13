@@ -19,8 +19,8 @@ namespace GameRecordApplication_v3.Controllers
 {
     public class HomeController : Controller
     {
-        private DataContext db;
-        MainViewModel viewModel;
+        private readonly DataContext db;
+        readonly MainViewModel viewModel;
         public HomeController()
         {
             db = new DataContext();
@@ -42,7 +42,8 @@ namespace GameRecordApplication_v3.Controllers
 
             // pagination
             // get number of pages
-            int pageSize = Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(billiardMatches.Count) / 2));
+            //int pageSize = Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(billiardMatches.Count) / 2));
+            int pageSize = 6;
             int pageNumber = (page ?? 1);
             viewModel.BilliardMatches = billiardMatches.ToPagedList(pageNumber, pageSize);
 
@@ -101,9 +102,12 @@ namespace GameRecordApplication_v3.Controllers
             return View();
         }
 
-        public ActionResult ShowNewMatchPopup()
+        public ActionResult ShowNewMatchPopup(int id)
         {
-            return PartialView("_AddMatch", null);
+            var vm = new MainViewModel();
+            vm.BilliardMatch = db.BilliardMatches.Find(id);
+
+            return PartialView("_ViewMatch", vm);
         }
 
         public ActionResult AddMatch()

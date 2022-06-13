@@ -11,5 +11,6 @@ namespace GameRecordApplication_v3.ViewModel
     {
         public IPagedList<BilliardMatch> BilliardMatches { get; set; }
         public List<int> Seasons { get; set; }
+        public BilliardMatch BilliardMatch { get; set; }
     }
 }
