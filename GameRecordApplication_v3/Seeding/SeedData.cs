@@ -53,6 +53,7 @@ namespace GameRecordApplication_v3.Seeding
             context.BilliardGameModes.Add(new Models.Game.BilliardGameMode() { BilliardGameModeName = "3rd/4th Game", IsPlayoff = true, Remarks = "Winner is 3rd, Loser is 4th" });
             context.BilliardGameModes.Add(new Models.Game.BilliardGameMode() { BilliardGameModeName = "Semis - Best of 3", IsPlayoff = true, Remarks = "Winner adv to Finals, Loser to 3rd/4th game" });
             context.BilliardGameModes.Add(new Models.Game.BilliardGameMode() { BilliardGameModeName = "Semis - Twice to Beat", IsPlayoff = true, Remarks = "Winner adv to Finals, Loser to 3rd/4th game" });
+            context.BilliardGameModes.Add(new Models.Game.BilliardGameMode() { BilliardGameModeName = "Finals - Best of 3", IsPlayoff = true, Remarks = "Winner is champ, Loser is 2nd" });
             context.BilliardGameModes.Add(new Models.Game.BilliardGameMode() { BilliardGameModeName = "Finals - Best of 5", IsPlayoff = true, Remarks = "Winner is champ, Loser is 2nd" });
 
             context.SaveChanges();

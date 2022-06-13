@@ -29,8 +29,6 @@
     </div>
 </div>
 
-
-
 <div class="row">
     @* Display records here *@
     <div class="col-md-12">
@@ -52,7 +50,7 @@
                         foreach (var item in Model.BilliardMatches)
                         {
                             <tr>
-                                <td><button class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                                <td><button class="btn btn-primary" onclick="Details(@item.BilliardMatchId)"><span class="glyphicon glyphicon-eye-open"></span></button></td>
                                 <td>@Html.DisplayFor(modelItem => item.BilliardGameType.BilliardGameTypeName)</td>
                                 <td>@Html.DisplayFor(modelItem => item.Season)</td>
                                 <td>@Html.DisplayFor(modelItem => item.PlayerWin.Name) vs @Html.DisplayFor(modelItem => item.PlayerLose.Name)</td>
@@ -115,9 +113,10 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Details</h4>
+                @*@Model.BilliardMatches.se*@
             </div>
             <div class="modal-body">
-
+                @Html.Partial("~/Views/BilliardMatches/_ViewMatch.cshtml", Model)
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -129,8 +128,9 @@
 @section scripts{
     <script>
         function Details(id) {
-            //$.get("@Url.Action("ShowNewMatchPopup", "Home")/" + id,
-            $.get("@Url.Action("ShowNewMatchPopup", "Home")",
+            
+            $.get("@Url.Action("ShowNewMatchPopup", "Home")/" + id,
+            //$.get("@Url.Action("ShowNewMatchPopup", "Home")",
                 function (data) {
                     $('.modal-body').html(data);
                 });
